@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+    rel="stylesheet"
+    >
     <link rel="stylesheet" href="style.css">
     <title>Text to Speech</title>
 </head>
 <body>
     <div class="contenedor">
-        <div class="txt">Text</div>
-        <ul class="txts">
-            <li><span>to Speech</span></li>
-        </ul>
+
+        <section class="titulo">
+            <h3 class="t1">Text</h3>
+            <h3 class="t2">to Speech</h3>
+        </section>
+
+       <div class="input">
+           <textarea id="texto" cols="30" rows="10" placeholder="text"></textarea>
+       </div>
+       
+        <section class="voz">
+
+        </section>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
