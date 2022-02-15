@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #081c15;
+    background: #0a0c16;
 }
 
 .contenedor{
@@ -22,25 +22,41 @@ body{
 
 .titulo h3{
     padding: 4px;
-    font-size: 2.8rem;
-    color: #d8f3dc;
+    font-size: 3rem;
+    color: #263238;
 }
-.titulo .t2{
-    color: #1b4332;
-}
+
 
 .input textarea{
     text-align: center;
   padding: 30px;
   width: 75%;
   font-size: 1rem;
-  background-color: #081c15;
-  border-radius: 4px;
-  border-color: #2d6a4f;
-  color: #d8f3dc;
+  background: #8154ff;
+  border-color: #8154ff;
+  border-radius: 33px;
+  color: #fbfbfb;
   resize: none;
 }
 
 textarea:focus {
   outline: 0;
+}
+
+.voz{
+    margin: 0 5px;
+    height: 47px;
+    width: 47px;
+    display: flex;
+    cursor: pointer;
+    color: #344e41;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #344e41;
+    transition: all 0.3s ease;
+}
+.voz:hover{
+    color: #dad7cd;
+    background: #344e41;
 }
