@@ -26,16 +26,19 @@ body{
     color: #263238;
 }
 
+.input{
+    margin-top: 20px;
+}
 
 .input textarea{
     text-align: center;
   padding: 30px;
   width: 75%;
   font-size: 1rem;
-  background: #8154ff;
-  border-color: #8154ff;
+  background: white;
+  border-color: #263238;
   border-radius: 33px;
-  color: #fbfbfb;
+  color: #263238;
   resize: none;
 }
 
@@ -44,7 +47,11 @@ textarea:focus {
 }
 
 .voz{
-    margin: 0 5px;
+    text-align: center;
+    justify-content: center;
+}
+
+.voz ul li{
     height: 47px;
     width: 47px;
     display: flex;
@@ -56,7 +63,17 @@ textarea:focus {
     border: 2px solid #344e41;
     transition: all 0.3s ease;
 }
-.voz:hover{
+.voz ul li:hover{
     color: #dad7cd;
     background: #344e41;
+}
+
+
+
+h1 {
+    display: inline-block;
+    color: white;
+    font-family: 'Righteous', serif;
+    font-size: 8em; 
+    text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
 }
