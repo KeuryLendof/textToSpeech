@@ -6,25 +6,18 @@
 }
 
 body{
-    background: #0a0c16;
+    background: #135EF2;
+    text-align: center;
+    justify-content: center;
 }
 
 .contenedor{
-    text-align: center;
-    justify-content: center;
-    margin-top: 30px;
+    margin: 40px auto;
+    background: #fff;
+    width: 80%;
+    border-radius: 20px;
 }
 
-.titulo{
-    text-align: center;
-    justify-content: center;
-}
-
-.titulo h3{
-    padding: 4px;
-    font-size: 3rem;
-    color: #263238;
-}
 
 .input{
     margin-top: 20px;
@@ -35,10 +28,9 @@ body{
   padding: 30px;
   width: 75%;
   font-size: 1rem;
-  background: white;
-  border-color: #263238;
-  border-radius: 33px;
-  color: #263238;
+  background: #fff;
+  border-radius: 10px;
+  border-color: #135EF2;
   resize: none;
 }
 
@@ -46,34 +38,32 @@ textarea:focus {
   outline: 0;
 }
 
-.voz{
-    text-align: center;
-    justify-content: center;
-}
 
-.voz ul li{
+.voz i{
+    margin: 0 auto;
     height: 47px;
     width: 47px;
     display: flex;
     cursor: pointer;
-    color: #344e41;
+    color: #135EF2;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 2px solid #344e41;
+    border: 2px solid #135EF2;
     transition: all 0.3s ease;
 }
-.voz ul li:hover{
-    color: #dad7cd;
-    background: #344e41;
+
+.voz i:hover{
+    color: #fff;
+    background: #135EF2;
 }
 
 
 
 h1 {
     display: inline-block;
-    color: white;
-    font-family: 'Righteous', serif;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 8em; 
-    text-shadow: .03em .03em 0 hsla(230,40%,50%,1);
+    text-shadow: .03em .03em 0 #135EF2;
 }
