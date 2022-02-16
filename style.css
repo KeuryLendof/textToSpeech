@@ -12,19 +12,55 @@ body{
     justify-content: center;
 }
 
+/*Inicio*/
+.inicioContainer{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.productive{
+    color: #fff;
+    display: grid;
+    gap: 3em;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.productive_title{
+    font-size: 6em;
+    text-shadow: .03em .03em 0 #ffffffd7;
+}
+
+.productive_img{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.productive_paragraph{
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+/**/
 .contenedor{
+    
+}
+
+
+.input{
     margin: 40px auto;
     background: #fff;
     width: 80%;
     border-radius: 20px;
 }
 
-
-.input{
-    margin-top: 20px;
-}
-
 .input textarea{
+    margin-top: 6px;
     text-align: center;
     font-size: 18px;
     padding: 30px;
@@ -47,6 +83,11 @@ textarea:is(:focus, :valid){
 
 textarea::-webkit-scrollbar{
     width: 0px;
+}
+
+.voz{
+    background: #fff;
+    border-radius: 20px;
 }
 
 .voz i{
