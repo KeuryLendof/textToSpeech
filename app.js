@@ -1,3 +1,5 @@
+const textarea = document.querySelector("textarea");
+
 function textToSpeech() {
     let text = document.getElementById("texto").value;
     
@@ -11,5 +13,13 @@ function textToSpeech() {
     
     window.speechSynthesis.speak(voz);
 }
+
+textarea.addEventListener("keyup", e =>{
+
+    textarea.style.height = "79px"
+    let height = e.target.scrollHeight; 
+    textarea.style.height = `${height}px`
+
+})
 
 

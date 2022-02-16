@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,300&family=Roboto+Serif:wght@100;300&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Serif', sans-serif;
 }
 
 body{
@@ -25,19 +26,28 @@ body{
 
 .input textarea{
     text-align: center;
-  padding: 30px;
-  width: 75%;
-  font-size: 1rem;
-  background: #fff;
-  border-radius: 10px;
-  border-color: #135EF2;
-  resize: none;
+    font-size: 18px;
+    padding: 30px;
+    width: 80%;
+    height: 75px;
+    max-height: 260px;
+    font-size: 1rem;
+    background: #fff;
+    border-radius: 10px;
+    border-color: #bfbfbf;
+    outline: none;
+    resize: none;
 }
 
-textarea:focus {
-  outline: 0;
+textarea:is(:focus, :valid){
+    border-color: #135EF2;
+    border-width: 2.5px;
+    padding: 30px;
 }
 
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
 
 .voz i{
     margin: 0 auto;
@@ -62,8 +72,30 @@ textarea:focus {
 
 h1 {
     display: inline-block;
-    color: #000;
-    font-family: 'Times New Roman', Times, serif;
+    color: #135EF2;
     font-size: 8em; 
-    text-shadow: .03em .03em 0 #135EF2;
+    text-shadow: .03em .03em 0 #135df279;
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 1240px){
+    h1{
+        font-size: 7em; 
+    }
+}
+@media screen and (max-width: 1000px){
+    h1{
+        font-size: 6em; 
+    }
+}
+@media screen and (max-width: 720px){
+    h1{
+        font-size: 5em; 
+    }
+}
+@media screen and (max-width: 440px){
+    h1{
+        font-size: 3.5em; 
+    }
 }
