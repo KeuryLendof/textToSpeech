@@ -1,6 +1,7 @@
 const textarea = document.querySelector("textarea"),
 btnStart = document.getElementById('start'),
-btnStop = document.getElementById('stop');
+btnStop = document.getElementById('stop'),
+btnCopy = document.getElementById('copy');
 
 function textToSpeech() {
     let text = document.getElementById("texto").value;
@@ -52,6 +53,10 @@ btnStop.addEventListener('click', () => {
     recognition.abort()
 })
 
+btnCopy.addEventListener('click', ()=>{
+    let text = document.getElementById("texto").value;
+    navigator.clipboard.writeText(text);
+})
 
 // let rec;
 
