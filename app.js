@@ -47,10 +47,14 @@ recognition.onresult = (event) =>{
 
 btnStart.addEventListener('click', () => {
     recognition.start();
+    btnStart.style.display = 'none'
+    btnStop.style.display = 'flex'
 })
 
 btnStop.addEventListener('click', () => {
     recognition.abort()
+    btnStart.style.display = 'flex'
+    btnStop.style.display = 'none'
 })
 
 btnCopy.addEventListener('click', ()=>{

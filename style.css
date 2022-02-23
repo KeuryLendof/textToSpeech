@@ -123,7 +123,24 @@ textarea::-webkit-scrollbar{
     background: #135EF2;
 }
 
+.voz i .stop{
+    display: block;
+}
 
+.notas{
+    grid-column: span 6;
+    grid-row: span 1;
+    margin: 40px auto;
+    background: #fff;
+    width: 95%;
+    border-radius: 15px;
+}
+.notas p{
+    margin: 0 auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 85%;
+}
 
 h1 {
     display: inline-block;

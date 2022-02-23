@@ -34,11 +34,15 @@
             
             <i class="fas fa-volume-up" onclick="textToSpeech()"></i>
             <i id="start" class="fas fa-microphone"></i>
-            <i id="stop" class="fas fa-pause"></i>
+            <i id="stop" style="display:none" class="fas fa-pause"></i>
             <i id="copy" class="fas fa-copy"></i>
             
         </section>
         <br><br>
+        <section class="notas">
+            <p>Actualmente, la compatibilidad de Speech to Text para el reconocimiento de voz se limita a Chrome para escritorio y Android.</p>
+            <p>En algunos navegadores como Chrome el uso del reconocimiento de voz implica el uso de un motor de reconocimiento basado en un servidor. Tu audio se enviara a un servicio de reconocimiento web para ser procesador por lo que no funcionar offline.</p>
+        </section>
     </div>
 
     <script src="app.js"></script>
