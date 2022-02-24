@@ -232,3 +232,161 @@ btnCopy.addEventListener('click', ()=>{
 //         }
 //     }
 // }
+
+// function addPerson(pid, pnombre, pciudad, pcumple, pemail){
+
+//     let newPerson ={
+//         id : pid,
+//         nombre : pnombre,
+//         ciudad : pciudad,
+//         cumpleanos : pcumple,
+//         email : pemail,
+//         petList : []
+//     }
+//     personas.push(newPerson);
+//     localStoragePersonList(personas);
+// }
+
+// function getPersonList(){
+//     let storeList = localStorage.getItem('localPersonList');
+//     if(storeList == null){
+//         personas = []
+//     }else{
+//         personas = JSON.parse(storeList);
+//     }
+//     return personas;
+// }
+
+// function localStoragePersonList(plist){
+//     localStorage.setItem('localPersonList', JSON.stringify(plist));
+// }
+
+// //Para agregar a la mascota
+
+// function encontrarPerson(pid){
+//     let personObj;
+//     for (let i = 0; i < personas.length; i++){
+//         if (personas[i].id == pid){
+//             personObj = personas[i];
+//         }
+//     }
+//     return personObj;
+// }
+
+// function addMascota(ppersonObj, ppetNombre, ptype, pgender){
+//     let newMascota = {
+//         nombre : ppetNombre,
+//         tipo : ptype,
+//         gender : pgender
+//     }
+//     let index = personas.indexOf(ppersonObj);
+//     ppersonObj.petList.push(newMascota);
+
+//     personas[index] = ppersonObj;
+//     localStoragePersonList(personas);
+// }
+
+// function addPerson(pid, pnombre, pciudad, pcumple, pemail){
+
+//     let newPerson ={
+//         id : pid,
+//         nombre : pnombre,
+//         ciudad : pciudad,
+//         cumpleanos : pcumple,
+//         email : pemail,
+//         petList : []
+//     }
+//     personas.push(newPerson);
+//     localStoragePersonList(personas);
+// }
+
+// function getPersonList(){
+//     let storeList = localStorage.getItem('localPersonList');
+//     if(storeList == null){
+//         personas = []
+//     }else{
+//         personas = JSON.parse(storeList);
+//     }
+//     return personas;
+// }
+
+// function localStoragePersonList(plist){
+//     localStorage.setItem('localPersonList', JSON.stringify(plist));
+// }
+
+// //Para agregar a la mascota
+
+// function encontrarPerson(pid){
+//     let personObj;
+//     for (let i = 0; i < personas.length; i++){
+//         if (personas[i].id == pid){
+//             personObj = personas[i];
+//         }
+//     }
+//     return personObj;
+// }
+
+// function addMascota(ppersonObj, ppetNombre, ptype, pgender){
+//     let newMascota = {
+//         nombre : ppetNombre,
+//         tipo : ptype,
+//         gender : pgender
+//     }
+//     let index = personas.indexOf(ppersonObj);
+//     ppersonObj.petList.push(newMascota);
+
+//     personas[index] = ppersonObj;
+//     localStoragePersonList(personas);
+// }
+// function addPerson(pid, pnombre, pciudad, pcumple, pemail){
+
+//     let newPerson ={
+//         id : pid,
+//         nombre : pnombre,
+//         ciudad : pciudad,
+//         cumpleanos : pcumple,
+//         email : pemail,
+//         petList : []
+//     }
+//     personas.push(newPerson);
+//     localStoragePersonList(personas);
+// }
+
+// function getPersonList(){
+//     let storeList = localStorage.getItem('localPersonList');
+//     if(storeList == null){
+//         personas = []
+//     }else{
+//         personas = JSON.parse(storeList);
+//     }
+//     return personas;
+// }
+
+// function localStoragePersonList(plist){
+//     localStorage.setItem('localPersonList', JSON.stringify(plist));
+// }
+
+// //Para agregar a la mascota
+
+// function encontrarPerson(pid){
+//     let personObj;
+//     for (let i = 0; i < personas.length; i++){
+//         if (personas[i].id == pid){
+//             personObj = personas[i];
+//         }
+//     }
+//     return personObj;
+// }
+
+// function addMascota(ppersonObj, ppetNombre, ptype, pgender){
+//     let newMascota = {
+//         nombre : ppetNombre,
+//         tipo : ptype,
+//         gender : pgender
+//     }
+//     let index = personas.indexOf(ppersonObj);
+//     ppersonObj.petList.push(newMascota);
+
+//     personas[index] = ppersonObj;
+//     localStoragePersonList(personas);
+// }

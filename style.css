@@ -145,7 +145,7 @@ textarea::-webkit-scrollbar{
 h1 {
     display: inline-block;
     color: #135EF2;
-    font-size: 8em; 
+    font-size: 3.5em; 
     text-shadow: .03em .03em 0 #135df279;
     margin-top: 10px;
 }
