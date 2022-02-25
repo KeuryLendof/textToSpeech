@@ -52,7 +52,7 @@ if(!("webkitSpeechRecognition" in window)){
 }else{
     rec = new webkitSpeechRecognition();
     rec.lang = "es-AR";
-    rec.continuous = false;
+    rec.continuous = true;
     rec.interimResults = true;
     rec.addEventListener("result", iniciar)
 }
