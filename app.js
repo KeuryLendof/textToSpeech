@@ -28,7 +28,7 @@ function textToSpeech() {
 
 textarea.addEventListener("keyup", e =>{
 
-    textarea.style.height = "79px"
+    textarea.style.height = "94px"
     let height = e.target.scrollHeight; 
     textarea.style.height = `${height}px`
 
@@ -52,8 +52,8 @@ if(!("webkitSpeechRecognition" in window)){
 }else{
     rec = new webkitSpeechRecognition();
     rec.lang = "es-AR";
-    rec.continuous = true;
-    rec.interim = true;
+    rec.continuous = false;
+    rec.interimResults = true;
     rec.addEventListener("result", iniciar)
 }
 

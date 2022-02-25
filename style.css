@@ -17,7 +17,7 @@ body{
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 75px 0;
     overflow: hidden;
 }
 
@@ -50,7 +50,7 @@ body{
 .contenedor{
     width: 95%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 55px 0;
     display: grid;
     grid-template-columns: repeat(6,1fr);
     grid-template-rows: repeat(2fr,auto);
@@ -72,7 +72,7 @@ body{
     font-size: 18px;
     padding: 30px;
     width: 90%;
-    height: 75px;
+    height: 90px;
     max-height: 260px;
     font-size: 1rem;
     background: #fff;
@@ -172,5 +172,8 @@ h1 {
 @media screen and (max-width: 440px){
     .productive_title{
         font-size: 3em; 
+    }
+    .voz{
+        width: 65%;
     }
 }
