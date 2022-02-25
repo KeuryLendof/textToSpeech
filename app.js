@@ -35,24 +35,42 @@ textarea.addEventListener("keyup", e =>{
 })
 
 
-let recognition = new webkitSpeechRecognition();
-recognition.lang = 'es-ES'
-recognition.continuous = false; //Esto es si quiere continual grabando o para automatico
-recognition.interimResults = true; //transcribir automaticamente
+// let recognition = new webkitSpeechRecognition();
+// recognition.lang = 'es-ES'
+// recognition.continuous = false; //Esto es si quiere continual grabando o para automatico
+// recognition.interimResults = true; //transcribir automaticamente
 
-recognition.onresult = (event) =>{
-    const results = event.results;
-    console.log(results)
+// recognition.onresult = (event) =>{
+//     const results = event.results;
+//     console.log(results)
+// }
+
+let rec;
+
+if(!("webkitSpeechRecognition" in window)){
+    alert("No funciona")
+}else{
+    rec = new webkitSpeechRecognition();
+    rec.lang = "es-AR";
+    rec.continuous = true;
+    rec.interim = true;
+    rec.addEventListener("result", iniciar)
+}
+
+function iniciar(event){
+    for(i = event.resultIndex; i < event.results.length; i++){
+        document.getElementById("texto").innerHTML = event.results[i][0].transcript;
+    }
 }
 
 btnStart.addEventListener('click', () => {
-    recognition.start();
+    rec.start();
     btnStart.style.display = 'none'
     btnStop.style.display = 'flex'
 })
 
 btnStop.addEventListener('click', () => {
-    recognition.abort()
+    rec.abort()
     btnStart.style.display = 'flex'
     btnStop.style.display = 'none'
 })
