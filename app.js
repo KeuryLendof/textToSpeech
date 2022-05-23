@@ -1,7 +1,14 @@
 const textarea = document.querySelector("textarea"),
 btnStart = document.getElementById('start'),
 btnStop = document.getElementById('stop'),
-btnCopy = document.getElementById('copy');
+btnCopy = document.getElementById('copy'),
+
+section = document.querySelector("footer"),
+hireBtn = section.querySelector("#hireBtn"),
+popup = section.querySelector(".popup-outer"),
+closeBtn = section.querySelectorAll("#close"),
+textArea = section.querySelector("textarea"),
+email = section.querySelector("input");
 
 function textToSpeech() {
     let text = document.getElementById("texto").value;
@@ -79,6 +86,20 @@ btnCopy.addEventListener('click', ()=>{
     let text = document.getElementById("texto").value;
     navigator.clipboard.writeText(text);
 })
+
+
+hireBtn.addEventListener("click" , () =>{
+    section.classList.add("show");
+    popup.style.display = 'block';
+});
+
+closeBtn.forEach(cBtn => {
+    cBtn.addEventListener("click" , ()=>{
+        section.classList.remove("show");
+        textArea.value = "";
+        popup.style.display = 'none';
+    });
+});
 
 // let rec;
 
