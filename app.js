@@ -1,14 +1,16 @@
 const textarea = document.querySelector("textarea"),
-btnStart = document.getElementById('start'),
-btnStop = document.getElementById('stop'),
-btnCopy = document.getElementById('copy'),
+    btnStart = document.getElementById('start'),
+    btnStop = document.getElementById('stop'),
+    btnCopy = document.getElementById('copy'),
+    btnTrash = document.getElementById('vaciar'),
+    
 
-section = document.querySelector("footer"),
-hireBtn = section.querySelector("#hireBtn"),
-popup = section.querySelector(".popup-outer"),
-closeBtn = section.querySelectorAll("#close"),
-textArea = section.querySelector("textarea"),
-email = section.querySelector("input");
+    section = document.querySelector("footer"),
+    hireBtn = section.querySelector("#hireBtn"),
+    popup = section.querySelector(".popup-outer"),
+    closeBtn = section.querySelectorAll("#close"),
+    textArea = section.querySelector("textarea"),
+    email = section.querySelector("input");
 
 function textToSpeech() {
     let text = document.getElementById("texto").value;
@@ -41,6 +43,19 @@ textarea.addEventListener("keyup", e =>{
 
 })
 
+function controls(evt, component){
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(component).style.display = "flex";
+    evt.currentTarget.className += " active";
+}
 
 // let recognition = new webkitSpeechRecognition();
 // recognition.lang = 'es-ES'
@@ -85,6 +100,10 @@ btnStop.addEventListener('click', () => {
 btnCopy.addEventListener('click', ()=>{
     let text = document.getElementById("texto").value;
     navigator.clipboard.writeText(text);
+})
+
+btnTrash.addEventListener('click',()=>{
+    document.getElementById("texto").value = '';
 })
 
 

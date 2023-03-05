@@ -32,7 +32,7 @@ body{
 }
 
 .productive_title{
-    font-size: 6em;
+    font-size: 5em;
     text-shadow: .03em .03em 0 #ffffffd7;
 }
 
@@ -48,11 +48,39 @@ body{
     margin-bottom: 1em;
 }
 
+
+.controls{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    justify-content: center;
+    color: #fff;
+}
+.controls h2{
+    font-size: 3em;
+    line-height: 0.3;
+}
+.controls article h3{
+    font-size: 1.3em;
+    text-shadow: .02em .02em 0 #ffffffd7;
+    line-height: 0.3;
+    cursor: pointer;
+    padding: 17px;
+}
+.controls article h3.active{
+    border: 2px solid white;
+}
+
+
+
 /**/
 .contenedor{
-    width: 95%;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 55px 0;
+    overflow: hidden;
+    padding-top: 25px;
+    padding-bottom: 55px;
     display: grid;
     grid-template-columns: repeat(6,1fr);
     grid-template-rows: repeat(2fr,auto);
@@ -62,10 +90,11 @@ body{
 .input{
     grid-column: span 6;
     grid-row: span 1;
-    margin: 40px auto;
+    padding: 20px 0;
+    margin-bottom: 30px;
     background: #fff;
     width: 95%;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 
 .input textarea{
@@ -78,7 +107,7 @@ body{
     max-height: 260px;
     font-size: 1rem;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 2px;
     border-color: #bfbfbf;
     outline: none;
     resize: none;
@@ -98,7 +127,7 @@ textarea::-webkit-scrollbar{
     grid-column: span 6;
     grid-row: span 1;
     background: #fff;
-    border-radius: 20px;
+    border-radius: 2px;
     width: 30%;
     margin: 0 auto;
     display: flex;
@@ -120,22 +149,65 @@ textarea::-webkit-scrollbar{
     transition: all 0.3s ease;
 }
 
+.escuchar{
+    grid-column: span 6;
+    grid-row: span 1;
+    background: #fff;
+    border-radius: 2px;
+    gap: 1em;
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+}
+.escuchar i{
+    margin: 0 auto;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 47px;
+    width: 47px;
+    display: flex;
+    cursor: pointer;
+    color: #135EF2;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #135EF2;
+    transition: all 0.3s ease;
+}
+.escuchar i:hover{
+    color: #fff;
+    background: #135EF2;
+}
+.escuchar .voices{
+    margin: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #135EF2;
+    border: 2px solid #135EF2;
+    width: 220px;
+    height: 50px;
+    overflow: hidden;
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    background-image: none, none;
+    background-position: 2% center, 98% center;
+    background-repeat: no-repeat, no-repeat;
+    outline: none;
+}
 .voz i:hover{
     color: #fff;
     background: #135EF2;
 }
 
-.voz i .stop{
-    display: block;
-}
-
 .notas{
     grid-column: span 6;
     grid-row: span 1;
-    margin: 40px auto;
     background: #fff;
+    padding: 10px 0;
     width: 95%;
-    border-radius: 15px;
+    border-radius: 2px;
 }
 .notas p{
     margin: 0 auto;
@@ -404,6 +476,13 @@ footer .popup-box .button{
         width: 50%;
     }
 }
+@media screen and (max-width: 600px){
+    .escuchar{
+       flex-direction: column;
+       gap: 0;
+       padding: 5px;
+    }
+}
 @media screen and (max-width: 420px){
     .redes{
         width: 65%;
@@ -411,9 +490,16 @@ footer .popup-box .button{
 }
 @media screen and (max-width: 440px){
     .productive_title{
-        font-size: 3em; 
+        font-size: 2.3em; 
     }
     .voz{
         width: 65%;
+    }
+    .contenedor{
+        padding: 15px 0;
+    }
+    .inicioContainer{
+        padding-top: 40px;
+        padding-bottom: 20px;
     }
 }

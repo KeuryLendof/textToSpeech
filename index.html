@@ -27,19 +27,49 @@
 
     </section>
 
+    <div class="controls">
+
+        <article>
+            <h3 class="tablinks active" onclick="controls(event, 'pp1')">Texto a Voz</h3>
+        </article>
+        <h2>|</h2>
+        <article>
+            <h3 class="tablinks" onclick="controls(event, 'pp2')">Voz a Texto</h3>
+        </article>
+        
+    </div>
+
     <div class="contenedor">
 
        <div class="input">
            <textarea id="texto" placeholder="Type the text you want to hear..." required></textarea>
        </div>
     
-        <section class="voz">
+        <section class="voz tabcontent" id="pp2" style="display: none;">
             
-            <i class="fas fa-volume-up" onclick="textToSpeech()"></i>
+            <i id="vaciar" class="fas fa-trash-restore"></i>
             <i id="start" class="fas fa-microphone"></i>
             <i id="stop" style="display:none" class="fas fa-pause"></i>
             <i id="copy" class="fas fa-copy"></i>
+            <!-- fa-play -->
+        </section>
+        <section class="escuchar tabcontent" id="pp1">
+
+            <select name="voices" id="voices" class="voices">
+                <option value="es-ES">Spanish (Spain)</option>
+                <option value="en-US">English (United States)</option>
+            </select>
             
+            <i class="fas fa-volume-up" onclick="textToSpeech()"></i>
+
+            <select name="speed" id="speed" class="voices">
+                <option value="0.5">0.5</option>
+                <option value="0.75">0.75</option>
+                <option value="1" selected>1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+            </select>
+
         </section>
 
         <br><br>
@@ -55,21 +85,21 @@
     <footer>
         <div class="profile">
             <div class="profile-img">
-                <img src="/img/me1.jpg" alt="">
+                <img src="./img/me1.jpg" alt="">
             </div>
             <span class="name">Keury Lendof</span>
             <span class="profession">Frontend Developer</span>
             <div id="hireBtn" class="button">
-                <img src="/img/gmail (2).png" alt="">
+                <img src="./img/gmail (2).png" alt="">
                 <button>Hire me</button>
             </div>
         </div>
 
         <div class="popup-outer">
             <div class="popup-box">
-                <i id="close" class="close"><img src="/img/x.png" alt=""></i>
+                <i id="close" class="close"><img src="./img/x.png" alt=""></i>
                 <div class="profile-text">
-                    <img src="/img/me1.jpg" alt=""> 
+                    <img src="./img/me1.jpg" alt=""> 
                     <div class="text">
                         <span class="name">Keury Lendof</span>
                         <span class="profession">Frontend Developer</span>
