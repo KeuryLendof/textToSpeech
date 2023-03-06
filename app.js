@@ -3,37 +3,76 @@ const textarea = document.querySelector("textarea"),
     btnStop = document.getElementById('stop'),
     btnCopy = document.getElementById('copy'),
     btnTrash = document.getElementById('vaciar'),
-    
+
+    selectVoices = document.getElementById('voices'),
+    selectRate = document.getElementById('speeds'),
+    btnStartReading = document.getElementById('startReading'),
+    btnStopReading = document.getElementById('stopReading'),
+    btnResetReading = document.getElementById('resumeReading'),
+    btnContinueReading = document.getElementById('continueReading'),
 
     section = document.querySelector("footer"),
     hireBtn = section.querySelector("#hireBtn"),
     popup = section.querySelector(".popup-outer"),
     closeBtn = section.querySelectorAll("#close"),
     textArea = section.querySelector("textarea"),
-    email = section.querySelector("input");
+email = section.querySelector("input");
 
 function textToSpeech() {
     let text = document.getElementById("texto").value;
+
+    btnStartReading.style.display = 'none'
+    btnStopReading.style.display = 'flex'
     
     let voz = new SpeechSynthesisUtterance();
-    voz.lang = "es-ES";
+    voz.lang = selectVoices.value;
 
     if(text == ""){
         voz.text = "No hay nada que leer";
         voz.volume = 1;
         voz.rate = 1;
         voz.pitch = 1;
-    
+
         window.speechSynthesis.speak(voz);
+        voz.addEventListener("end", () => {
+            btnStartReading.style.display = 'flex'
+            btnStopReading.style.display = 'none'
+        });
     }
     
     voz.text = text;
     voz.volume = 1;
-    voz.rate = 1;
-    voz.pitch = 1;
-    
+    voz.rate = selectRate.value;
+    voz.pitch = 1.5;
+
     window.speechSynthesis.speak(voz);
+    voz.onend = () => {
+        btnStartReading.style.display = 'flex'
+        btnStopReading.style.display = 'none'
+    };
 }
+
+btnStopReading.addEventListener('click',()=>{
+    btnStopReading.style.display = 'none'
+    btnResetReading.style.display = 'flex'
+    btnContinueReading.style.display = 'flex'
+    window.speechSynthesis.pause()
+})
+
+btnContinueReading.addEventListener('click',()=>{
+    window.speechSynthesis.resume()
+    btnStopReading.style.display = 'flex'
+    btnResetReading.style.display = 'none'
+    btnContinueReading.style.display = 'none'
+})
+
+btnResetReading.addEventListener('click',()=>{
+    window.speechSynthesis.cancel()
+    btnStartReading.style.display = 'flex'
+    btnStopReading.style.display = 'none'
+    btnResetReading.style.display = 'none'
+    btnContinueReading.style.display = 'none'
+})
 
 textarea.addEventListener("keyup", e =>{
 
@@ -57,39 +96,37 @@ function controls(evt, component){
     evt.currentTarget.className += " active";
 }
 
-// let recognition = new webkitSpeechRecognition();
-// recognition.lang = 'es-ES'
-// recognition.continuous = false; //Esto es si quiere continual grabando o para automatico
-// recognition.interimResults = true; //transcribir automaticamente
-
-// recognition.onresult = (event) =>{
-//     const results = event.results;
-//     console.log(results)
-// }
-
 let rec;
-
-if(!("webkitSpeechRecognition" in window)){
-    alert("No funciona")
-}else{
-    rec = new webkitSpeechRecognition();
-    rec.lang = "es-AR";
-    rec.continuous = true;
-    rec.interimResults = true;
-    rec.addEventListener("result", iniciar)
-}
-
-function iniciar(event){
-    for(i = event.resultIndex; i < event.results.length; i++){
-        document.getElementById("texto").innerHTML = event.results[i][0].transcript;
-    }
-}
 
 btnStart.addEventListener('click', () => {
     rec.start();
     btnStart.style.display = 'none'
     btnStop.style.display = 'flex'
 })
+
+if(!("webkitSpeechRecognition" in window)){
+    alert("No funciona")
+}else{
+    let interim_transcript = "";
+    rec = new webkitSpeechRecognition();
+    rec.lang = "es-AR";
+    rec.continuous = true;
+    rec.interimResults = true;
+
+    rec.onresult = (event) => {
+
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+
+            if (event.results[i].isFinal) {
+                interim_transcript = event.results[i][0].transcript;
+            } else {
+                interim_transcript = event.results[i][0].transcript;
+            }
+
+        }
+        document.getElementById("texto").innerHTML = interim_transcript;
+    }
+}
 
 btnStop.addEventListener('click', () => {
     rec.abort()

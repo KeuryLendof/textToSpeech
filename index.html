@@ -60,9 +60,12 @@
                 <option value="en-US">English (United States)</option>
             </select>
             
-            <i class="fas fa-volume-up" onclick="textToSpeech()"></i>
+            <i id="startReading" class="fas fa-play" onclick="textToSpeech()"></i>
+            <i id="continueReading" style="display:none" class="fas fa-volume-up"></i>
+            <i id="resumeReading" class="fas fa-stop" style="display:none"></i>
+            <i id="stopReading" style="display:none" class="fas fa-pause"></i>
 
-            <select name="speed" id="speed" class="voices">
+            <select name="speed" id="speeds" class="voices">
                 <option value="0.5">0.5</option>
                 <option value="0.75">0.75</option>
                 <option value="1" selected>1</option>
